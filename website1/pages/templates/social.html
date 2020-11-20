@@ -1,0 +1,57 @@
+
+{%extends 'base.html' %}
+
+{%block title%}
+	<title>social</title>
+{%endblock%}
+
+{%block content%}
+	<h1>Social page</h1>
+	<p>This is a social page template</p>
+	<p>
+		{{text|upper}} <br>
+		{{number}} <br> <!-- from the contxt --> 	
+		
+	</p>
+
+
+	<h3> iterate through list </h3>
+
+	<ul>
+	{% for i in my_list %}
+		<li>{{i}}</li>
+	{%endfor %}
+	</ul>
+
+	<h3> iterate through counter </h3>
+
+	<ul>
+	{% for i in my_list %}
+		<li>{{forloop.counter }} {{i}}</li>
+	{%endfor %}
+	</ul>
+
+	<p>
+		{% if text != 'mana'%}
+			{{text}}
+		{%endif%}
+	</p>
+
+	<p>
+		{% if number == 123 %}
+			<p> Hello world!! </p>
+		{%endif%}
+	</p>
+
+
+	<p>
+		{% if number == 123 %}
+			<p> Hello world!! </p>
+		{%endif%}
+	</p>
+
+	{{my_html| safe}} 
+
+
+
+{%endblock%}
